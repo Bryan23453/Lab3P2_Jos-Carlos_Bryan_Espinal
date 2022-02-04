@@ -150,6 +150,70 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 7:{
+                     System.out.println("Menú de Simulación");
+        System.out.println("1 - Bus\n2 - Rapidito\n3 - Taxi\n4 - Mototaxi");
+        System.out.print("Seleccione un transporte: ");
+        int transporteNum = lea.nextInt();
+        System.out.print("Ingrese la posición de ese transporte: ");
+        int posicion = lea.nextInt();
+        transportes transporte;
+        /* Aquí seleccionaríamos el transporte según su posición en el arraylist
+        switch(transporteNum){
+            case 1:
+                break;
+        }*/
+        
+        int opcion;
+        
+        do{
+            System.out.println("0. Salir\n" +
+            "1. Subir Alunmo al transporte\n" +
+            "2. Bajar alumno del transporte\n" +
+            "3. Listar alumnos del transporte\n" +
+            "4. Escoger transportista\n" +
+            "5. Quitar transportista\n" +
+            "6. Añadir ruta\n" +
+            "7. Quitar ruta\n" +
+            "8. Imprimir transporte\n" +
+            "9. Comenzar");
+            
+            System.out.print("Seleccione una opción: ");
+            opcion = lea.nextInt();
+            switch (opcion){
+                case 0:
+                    System.out.println("Gracias");
+                    break;
+                case 1:
+                    System.out.print("Ingrese el nombre del alumno: ");
+                    String nombre = lea.nextLine();
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    System.out.println("Listar alumnos del transporte");
+                    //for each del arraylist de alumnos
+                    //dentro del for each:  alumnos.toString();
+                    break;
+                case 4:
+                    System.out.println("Escoger Transportista");
+                    break;
+                case 5:
+                    System.out.println("Quitar transportista");
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    //transporte.toString();
+                    break;
+                case 9:
+                    System.out.println("Simulación");
+                    break;
+            }
+            
+        }while(opcion!=0 || opcion!=9);
 
                 }
                 break;
