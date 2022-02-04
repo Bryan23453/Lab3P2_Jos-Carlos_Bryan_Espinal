@@ -11,9 +11,18 @@ package lab3p2_jose.carlos_bryan_espinal;
  */
 public class buses extends transportes{
     int depie;
-
-    public buses(String placa, String color, String conductores) {
+    int cent;
+    String a="bus";
+    public buses(String placa, String color, String conductores,int par,int sen) {
         super(placa, color, conductores);
+        this.depie=par;
+        this.cent=sen;
+    }
+
+    @Override
+    public String toString() {
+       return super.toString()
+               + " capacidad de pie=" + depie + ", capacidad centado=" + cent + " tipo de unidad= "+ a;
     }
     
     

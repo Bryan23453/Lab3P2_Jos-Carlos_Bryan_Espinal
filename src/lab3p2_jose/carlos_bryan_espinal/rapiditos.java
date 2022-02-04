@@ -10,9 +10,18 @@ package lab3p2_jose.carlos_bryan_espinal;
  * @author bryan
  */
 public class rapiditos extends transportes{
-    
-    public rapiditos(String placa, String color, String conductores) {
+    int cap;
+    String a="taxi";
+    public rapiditos(String placa, String color, String conductores,int cap) {
         super(placa, color, conductores);
+        this.cap=cap;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + " capacidad=" + cap + " tipo de unidad= "+ a;
+    }
+    
     
 }

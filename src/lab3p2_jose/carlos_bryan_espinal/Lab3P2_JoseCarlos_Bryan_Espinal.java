@@ -14,7 +14,8 @@ static Scanner lea = new Scanner(System.in);
         boolean a=true;
         ArrayList<clases> clas = new ArrayList();
         ArrayList<transportes> trans = new ArrayList();
-        ArrayList<personas> per = new ArrayList();
+        ArrayList<personas> alum = new ArrayList();
+        ArrayList<personas> transportista = new ArrayList();
         while (a==true) {
             System.out.println("0. Salir\n" +
             "1. Crear Clase\n" +
@@ -63,19 +64,89 @@ static Scanner lea = new Scanner(System.in);
                     System.out.println("ingrese codigo de estudiante");
                     int codes=lea.nextInt();
                     personas p=new personas(nom, fecha, iden);
-                    per.add(new pasajeros(codes,p.nom,p.fecha,p.id));
+                    alum.add(new pasajeros(codes,p.nom,p.fecha,p.id));
                 }
                 break;
                 case 4:{
-
+                    System.out.println("selecione el alumno a gregar clase");
+                    for (int i = 0; i < alum.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("alumno " + t + ":" + alum.get(i));
+                    }
+                    int posA = lea.nextInt();
+                    posA--;
+                    System.out.println("selecione la clase a agregar a el alumno");
+                    for (int i = 0; i < alum.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("clase " + t + ":" + clas.get(i));
+                    }
+                    int poscla = lea.nextInt();
+                    //alum.get(posA).;
                 }
                 break;
                 case 5:{
-
+                    System.out.println("ingrese nombre");
+                    String nom= lea.nextLine();
+                    nom= lea.nextLine();
+                    System.out.println("ingrese identidad");
+                    int iden=lea.nextInt();
+                    System.out.println("fecha de nacimiento");
+                    String fecha= lea.nextLine();
+                    fecha= lea.nextLine();
+                    System.out.println("años de experiencia "); 
+                    int aniosxp=lea.nextInt();
+                    System.out.println("apodo tiene en su barrio");
+                    String apodo=lea.nextLine();
+                    apodo=lea.nextLine();
+                    personas p=new personas(nom, fecha, iden);
+                    transportista.add(new conductores(aniosxp , apodo, p.nom, p.fecha, p.id));
                 }
                 break;
                 case 6:{
-
+                    System.out.println("ingrese transporte a añadir\n"
+                            + "1- taxi\n"
+                            + "2- buses\n"
+                            + "3- rapiditos\n"
+                            + "4- mototaxis\n");
+                    int ope =lea.nextInt();
+                    System.out.println("ingrese placa");
+                    String placa=lea.nextLine();
+                    placa=lea.nextLine();
+                    System.out.println("ingrese color");
+                    String col=lea.nextLine();
+                    
+                    switch (ope){
+                        case 1:{
+                            System.out.println("ingrese numero de taxi");
+                            int taxnum=lea.nextInt();
+                            transportes tra=new transportes(placa, col, col);
+                            trans.add(new taxis(taxnum, tra.placa, tra.color, "",4));
+                        }
+                        break;
+                        case 2:{
+                            System.out.println("Ingrese un numero de sillas ");
+                            int silla=lea.nextInt();
+                            System.out.println("Ingrese capacidad de personas de pie");
+                            int pie=lea.nextInt();
+                            transportes tra=new transportes(placa, col, col);
+                            trans.add(new buses(placa, col, "",pie,silla));
+                            
+                        }
+                        break;
+                        case 3:{
+                            System.out.println("Ingrese un numero de sillas ");
+                            int silla=lea.nextInt();
+                            transportes tra=new transportes(placa, col, col);
+                            trans.add(new rapiditos(tra.placa, tra.color, "",silla) );
+                        }
+                        break;
+                        case 4:{
+                            transportes tra=new transportes(placa, col, "");
+                            trans.add(new mototaxis(tra.placa, tra.color, "",2));
+                        }
+                        break;
+                        
+                    }
                 }
                 break;
                 case 7:{
@@ -94,18 +165,24 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 10:{
-                    for (int i = 0; i < per.size(); i++) {
+                    for (int i = 0; i < alum.size(); i++) {
                         int t = i + 1;
-                        System.out.println("persona " + t + ":" + per.get(i));
+                        System.out.println("alumno " + t + ":" + alum.get(i));
                     }
                 }
                 break;
                 case 11:{
-
+                    for (int i = 0; i < transportista.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("transportista " + t + ":" + transportista.get(i));
+                    }
                 }
                 break;
                 case 12:{
-
+                    for (int i = 0; i < trans.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("transporte " + t + ":" + trans.get(i));
+                    }
                 }
                 break;
 

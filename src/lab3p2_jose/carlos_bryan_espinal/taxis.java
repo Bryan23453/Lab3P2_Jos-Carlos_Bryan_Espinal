@@ -12,16 +12,18 @@ package lab3p2_jose.carlos_bryan_espinal;
 public class taxis extends transportes{
     
     int numeroTaxi;
-
-    public taxis(int numeroTaxi, String placa, String color, String conductores) {
+    int cantidad;
+    String a="taxi";
+    public taxis(int numeroTaxi, String placa, String color, String conductores,int can) {
         super(placa, color, conductores);
         this.numeroTaxi = numeroTaxi;
-        this.cantidad=4;
+        this.cantidad=can;
     }
 
     @Override
     public String toString() {
-        return "taxis{" + "numeroTaxi=" + numeroTaxi + '}';
+        return super.toString()
+        + " numeroTaxi=" + numeroTaxi + " tipo de unidad= "+ a;
     }
     
     

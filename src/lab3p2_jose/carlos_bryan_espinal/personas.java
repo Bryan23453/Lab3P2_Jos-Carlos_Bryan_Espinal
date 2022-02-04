@@ -9,7 +9,7 @@ public class personas {
 String nom; 
 String fecha;
 int id;
-
+String clas;
     public personas() {
     }
 
@@ -43,9 +43,10 @@ int id;
         this.id = id;
     }
 
+    
     @Override
     public String toString() {
-        return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id + '}';
+        return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id ;
     }
 
     

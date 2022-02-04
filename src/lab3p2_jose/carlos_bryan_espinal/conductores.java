@@ -37,7 +37,8 @@ public class conductores extends personas {
 
     @Override
     public String toString() {
-        return "conductores{" + "experiencia=" + experiencia + ", apodo=" + apodo + '}';
+        return super.toString()
+        + " experiencia=" + experiencia + ", apodo=" + apodo + '}';
     }
 
 

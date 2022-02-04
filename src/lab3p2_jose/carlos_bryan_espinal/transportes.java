@@ -13,7 +13,6 @@ public class transportes {
      String placa;
      String color;
      String conductores;
-     int cantidad;
 
     public transportes(String placa, String color, String conductores) {
         this.placa = placa;
@@ -44,6 +43,11 @@ public class transportes {
 
     public void setConductores(String conductores) {
         this.conductores = conductores;
+    }
+
+    @Override
+    public String toString() {
+        return  "placa=" + placa + ", color=" + color + ", conductores= " + conductores ;
     }
      
 }

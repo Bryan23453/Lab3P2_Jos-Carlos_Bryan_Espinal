@@ -10,9 +10,17 @@ package lab3p2_jose.carlos_bryan_espinal;
  * @author bryan
  */
 public class mototaxis extends transportes{
-    
-    public mototaxis(String placa, String color, String conductores) {
+    int tam;
+    String a="mototaxi";
+    public mototaxis(String placa, String color, String conductores,int tam) {
         super(placa, color, conductores);
+        this.tam=tam;
+    }
+
+    @Override
+    public String toString() {
+       return super.toString() 
+               + " capacidad=" + tam + " tipo de unidad= "+ a;
     }
     
 }
