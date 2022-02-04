@@ -11,4 +11,19 @@ package lab3p2_jose.carlos_bryan_espinal;
  */
 public class taxis extends transportes{
     
+    int numeroTaxi;
+
+    public taxis(int numeroTaxi, String placa, String color, String conductores) {
+        super(placa, color, conductores);
+        this.numeroTaxi = numeroTaxi;
+        this.cantidad=4;
+    }
+
+    @Override
+    public String toString() {
+        return "taxis{" + "numeroTaxi=" + numeroTaxi + '}';
+    }
+    
+    
+    
 }
