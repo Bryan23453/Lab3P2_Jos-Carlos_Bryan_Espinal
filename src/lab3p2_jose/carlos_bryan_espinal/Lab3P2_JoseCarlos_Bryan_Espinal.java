@@ -12,6 +12,7 @@ public class Lab3P2_JoseCarlos_Bryan_Espinal {
 static Scanner lea = new Scanner(System.in);
     public static void main(String[] args) {
         boolean a=true;
+        ArrayList<clases> clas = new ArrayList();
         while (a==true) {
             System.out.println("0. Salir\n" +
             "1. Crear Clase\n" +
@@ -33,7 +34,16 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 1:{
-
+                    System.out.println("ingrese nombre de la clase");
+                    String n=lea.nextLine();
+                    n=lea.nextLine();
+                    System.out.println("ingrese id unico de clase");
+                    int b=lea.nextInt();
+                    clas.add(new clases(n, b));
+                    /*for (int i = 0; i < clas.size(); i++) {
+                        int indice = i + 1;
+                        System.out.println("clase " + indice + ":" + clas.get(i));
+                    }*/
                 }
                 break;
                 case 2:{
@@ -41,7 +51,7 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 3:{
-
+                    
                 }
                 break;
                 case 4:{

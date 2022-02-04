@@ -10,6 +10,7 @@ public class conductores extends personas {
     
     private int experiencia;
     private String apodo;
+  
 
 
     public conductores(int experiencia, String apodo, String nom, String fecha, int id) {
@@ -38,6 +39,9 @@ public class conductores extends personas {
     public String toString() {
         return "conductores{" + "experiencia=" + experiencia + ", apodo=" + apodo + '}';
     }
+
+
+    }
     
     
 
@@ -47,4 +51,4 @@ public class conductores extends personas {
    
  
     
-}
+
