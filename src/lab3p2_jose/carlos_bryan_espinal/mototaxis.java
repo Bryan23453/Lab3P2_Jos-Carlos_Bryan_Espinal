@@ -9,6 +9,6 @@ package lab3p2_jose.carlos_bryan_espinal;
  *
  * @author bryan
  */
-public class mototaxis {
+public class mototaxis extends transportes{
     
 }
