@@ -1,24 +1,50 @@
 
 package lab3p2_jose.carlos_bryan_espinal;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+
 /**
  *
  * @author bryan
  */
 public class conductores extends personas {
-    static Scanner lea = new Scanner(System.in);
-    ArrayList<conductores>listaconductores=new ArrayList<conductores>();
-    public int experiencia;
+    
+    private int experiencia;
+    private String apodo;
 
-    public static void registrarConductor(){
-        System.out.println("ingrese años de experiencia");
-        int experiencia = lea.nextInt();
-        System.out.println("Ingrese apodo");
-        String nombre = lea.nextLine();
-        
-        listaconductores.add(new conductores(experiencia,nombre));
+
+    public conductores(int experiencia, String apodo, String nom, String fecha, int id) {
+        super(nom, fecha, id);
+        this.experiencia = experiencia;
+        this.apodo = apodo;
     }
+
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    public String getApodo() {
+        return apodo;
+    }
+
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
+    }
+
+    @Override
+    public String toString() {
+        return "conductores{" + "experiencia=" + experiencia + ", apodo=" + apodo + '}';
+    }
+    
+    
+
+    
+    
+
+   
+ 
     
 }
