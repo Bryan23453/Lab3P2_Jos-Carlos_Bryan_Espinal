@@ -18,7 +18,7 @@ public class conductores extends personas {
         System.out.println("Ingrese apodo");
         String nombre = lea.nextLine();
         
-        listaconductores.add(new conductores(experiencia,nombre));
+        //listaconductores.add(new conductores(experiencia,nombre));
     }
     
 }
