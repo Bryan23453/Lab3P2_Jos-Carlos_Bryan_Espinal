@@ -13,6 +13,8 @@ static Scanner lea = new Scanner(System.in);
     public static void main(String[] args) {
         boolean a=true;
         ArrayList<clases> clas = new ArrayList();
+        ArrayList<transportes> trans = new ArrayList();
+        ArrayList<personas> per = new ArrayList();
         while (a==true) {
             System.out.println("0. Salir\n" +
             "1. Crear Clase\n" +
@@ -40,18 +42,28 @@ static Scanner lea = new Scanner(System.in);
                     System.out.println("ingrese id unico de clase");
                     int b=lea.nextInt();
                     clas.add(new clases(n, b));
-                    /*for (int i = 0; i < clas.size(); i++) {
-                        int indice = i + 1;
-                        System.out.println("clase " + indice + ":" + clas.get(i));
-                    }*/
                 }
                 break;
                 case 2:{
-
+                    System.out.println("ingrese punto x");
+                    int x=lea.nextInt();
+                    System.out.println("ingrese punto y");
+                    int y=lea.nextInt();
                 }
                 break;
                 case 3:{
-                    
+                    System.out.println("ingrese nombre");
+                    String nom= lea.nextLine();
+                    nom= lea.nextLine();
+                    System.out.println("ingrese identidad");
+                    int iden=lea.nextInt();
+                    System.out.println("fecha de nacimiento");
+                    String fecha= lea.nextLine();
+                    fecha= lea.nextLine();
+                    System.out.println("ingrese codigo de estudiante");
+                    int codes=lea.nextInt();
+                    personas p=new personas(nom, fecha, iden);
+                    per.add(new pasajeros(codes,p.nom,p.fecha,p.id));
                 }
                 break;
                 case 4:{
@@ -71,7 +83,10 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 8:{
-
+                    for (int i = 0; i < clas.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("clase " + t + ":" + clas.get(i));
+                    }
                 }
                 break;
                 case 9:{
@@ -79,7 +94,10 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 10:{
-
+                    for (int i = 0; i < per.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("persona " + t + ":" + per.get(i));
+                    }
                 }
                 break;
                 case 11:{

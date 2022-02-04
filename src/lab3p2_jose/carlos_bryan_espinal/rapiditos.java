@@ -11,4 +11,8 @@ package lab3p2_jose.carlos_bryan_espinal;
  */
 public class rapiditos extends transportes{
     
+    public rapiditos(String placa, String color, String conductores) {
+        super(placa, color, conductores);
+    }
+    
 }

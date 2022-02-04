@@ -43,5 +43,10 @@ int id;
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id + '}';
+    }
+
     
 }

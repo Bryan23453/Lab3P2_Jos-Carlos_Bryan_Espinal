@@ -11,6 +11,10 @@ package lab3p2_jose.carlos_bryan_espinal;
  */
 public class buses extends transportes{
     int depie;
+
+    public buses(String placa, String color, String conductores) {
+        super(placa, color, conductores);
+    }
     
     
 }

@@ -7,6 +7,20 @@ package lab3p2_jose.carlos_bryan_espinal;
 
 
 public class pasajeros extends personas{
-  int id ;
+  int id_est ;
+
+    public pasajeros() {
+    }
+
+    public pasajeros(int id_est, String nom, String fecha, int id) {
+        super(nom, fecha, id);
+        this.id_est = id_est;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()
+        + " id de estudiante: " + id_est;
+    }
   
 }
