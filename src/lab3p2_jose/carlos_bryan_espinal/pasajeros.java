@@ -21,7 +21,7 @@ public class pasajeros extends personas{
     @Override
     public String toString() {
         return super.toString()
-        + " id de estudiante: " + id_est +" clases: "+clas;
+        + " id de estudiante: " + id_est ;
     }
     
   

@@ -39,7 +39,7 @@ public class clases {
 
     @Override
     public String toString() {
-        return "  nombre de la clase: " + nom + " , Codigo de la clase: " + cod + "\n";
+        return " clase: " + nom + " , Codigo de la clase: " + cod + "\n";
     }
     
 }

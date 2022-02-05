@@ -5,11 +5,14 @@
  */
 package lab3p2_jose.carlos_bryan_espinal;
 
+import java.util.ArrayList;
+
 public class personas {
 String nom; 
 String fecha;
 int id;
 String clas;
+ArrayList<clases> clase = new ArrayList();
     public personas() {
     }
 
@@ -43,10 +46,28 @@ String clas;
         this.id = id;
     }
 
+    public ArrayList<clases> getpasaje() {
+        return clase;
+    }
+
+    public void setclase(ArrayList<clases> clase) {
+        this.clase = clase;
+    }
+
     
     @Override
     public String toString() {
-        return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id ;
+        if (clase.size()<1) {
+            return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id ;
+        }
+        else{
+            String r=" ";
+            for (int i = 0; i < clase.size(); i++) {
+                int t = i + 1;
+                r+=clase.get(i)+" , ";
+            }
+            return " nombre= " + nom + " , fecha de nacimiento= " + fecha + " , id= " + id+ r ;
+        }
     }
 
     

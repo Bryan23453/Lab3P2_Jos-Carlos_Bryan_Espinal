@@ -76,11 +76,17 @@ static Scanner lea = new Scanner(System.in);
                     int posA = lea.nextInt();
                     posA--;
                     System.out.println("selecione la clase a agregar a el alumno");
-                    for (int i = 0; i < alum.size(); i++) {
+                    for (int i = 0; i < clas.size(); i++) {
                         int t = i + 1;
                         System.out.println("clase " + t + ":" + clas.get(i));
                     }
+                    ArrayList<clases> A = new ArrayList();
                     int poscla = lea.nextInt();
+                    poscla--;
+                    A.add(clas.get(poscla));
+                     alum.get(posA).setclase(A);
+                             
+                             /*.mascotasClientes.add(masco.get(posM));*/
                     //alum.get(posA).;
                 }
                 break;
