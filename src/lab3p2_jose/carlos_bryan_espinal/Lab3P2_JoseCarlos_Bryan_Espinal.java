@@ -37,12 +37,27 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 1:{
-                    System.out.println("ingrese nombre de la clase");
-                    String n=lea.nextLine();
-                    n=lea.nextLine();
-                    System.out.println("ingrese id unico de clase");
-                    int b=lea.nextInt();
-                    clas.add(new clases(n, b));
+                    boolean A=false;
+                    String n="";
+                    int b=0;
+                        while (A==false){
+                            A=true;
+                            System.out.println("ingrese nombre de la clase");
+                            n=lea.nextLine();
+                            n=lea.nextLine();
+                            System.out.println("ingrese id unico de clase");
+                            b=lea.nextInt();
+                            for (clases cla : clas) {
+                                if (b == cla.getCod()) {
+                                    A=false;
+                                    break;
+                                }
+                            }
+                            if (A==false) {
+                                System.out.println("no puede haber 2 id con el mismo numero"); 
+                            }
+                    }
+                        clas.add(new clases(n, b));
                 }
                 break;
                 case 2:{
@@ -56,19 +71,47 @@ static Scanner lea = new Scanner(System.in);
                     System.out.println("ingrese nombre");
                     String nom= lea.nextLine();
                     nom= lea.nextLine();
-                    System.out.println("ingrese identidad");
-                    int iden=lea.nextInt();
+                    boolean A=false;
+                    int iden=0;
+                        while (A==false){
+                            A=true;
+                            System.out.println("ingrese identidad");
+                            iden=lea.nextInt();
+                            for (personas per : alum) {
+                                if (iden == per.getId()) {
+                                    A=false;
+                                    break;
+                                }
+                            }
+                            if (A==false) {
+                                System.out.println("no puede haber 2 id con el mismo numero"); 
+                            }
+                    }
                     System.out.println("fecha de nacimiento");
                     String fecha= lea.nextLine();
                     fecha= lea.nextLine();
-                    System.out.println("ingrese codigo de estudiante");
-                    int codes=lea.nextInt();
+                    boolean B=false;
+                    int codes=0;
+                        while (B==false){
+                            B=true;
+                           System.out.println("ingrese codigo de estudiante");
+                            codes=lea.nextInt();
+                            for (personas per : alum) {
+                                if (codes == per.getId()) {
+                                    B=false;
+                                    break;
+                                }
+                            }
+                            if (B==false) {
+                                System.out.println("no puede haber 2 id con el mismo numero"); 
+                            }
+                    }
                     personas p=new personas(nom, fecha, iden);
                     alum.add(new pasajeros(codes,p.nom,p.fecha,p.id));
                 }
                 break;
                 case 4:{
-                    System.out.println("selecione el alumno a gregar clase");
+                    System.out.println("selecione el alumno a agregar clase");
                     for (int i = 0; i < alum.size(); i++) {
                         int t = i + 1;
                         System.out.println("alumno " + t + ":" + alum.get(i));
@@ -85,17 +128,28 @@ static Scanner lea = new Scanner(System.in);
                     poscla--;
                     A.add(clas.get(poscla));
                      alum.get(posA).setclase(A);
-                             
-                             /*.mascotasClientes.add(masco.get(posM));*/
-                    //alum.get(posA).;
                 }
                 break;
                 case 5:{
                     System.out.println("ingrese nombre");
                     String nom= lea.nextLine();
                     nom= lea.nextLine();
-                    System.out.println("ingrese identidad");
-                    int iden=lea.nextInt();
+                    boolean A=false;
+                    int iden=0;
+                        while (A==false){
+                            A=true;
+                            System.out.println("ingrese identidad");
+                            iden=lea.nextInt();
+                            for (personas per : alum) {
+                                if (iden == per.getId()) {
+                                    A=false;
+                                    break;
+                                }
+                            }
+                            if (A==false) {
+                                System.out.println("no puede haber 2 id con el mismo numero"); 
+                            }
+                    }
                     System.out.println("fecha de nacimiento");
                     String fecha= lea.nextLine();
                     fecha= lea.nextLine();
@@ -115,8 +169,25 @@ static Scanner lea = new Scanner(System.in);
                             + "3- rapiditos\n"
                             + "4- mototaxis\n");
                     int ope =lea.nextInt();
-                    System.out.println("ingrese placa");
-                    String placa=lea.nextLine();
+                    
+                    boolean A=false;
+                    String placa="";
+                        while (A==false){
+                            A=true;
+                            System.out.println("ingrese placa");
+                            placa=lea.nextLine();
+                            for (transportes tras : trans) {
+                                String e =tras.getPlaca();
+                                if (placa.equals(e)) {
+                                    A=false;
+                                    break;
+                                }
+                            }
+                            if (A==false) {
+                                System.out.println("no puede haber 2 placas con el mismo numero"); 
+                            }
+                    }
+                    
                     placa=lea.nextLine();
                     System.out.println("ingrese color");
                     String col=lea.nextLine();
