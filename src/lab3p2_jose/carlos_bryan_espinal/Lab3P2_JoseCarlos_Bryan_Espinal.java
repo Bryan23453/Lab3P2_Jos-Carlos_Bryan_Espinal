@@ -287,10 +287,10 @@ static Scanner lea = new Scanner(System.in);
                             int t = i + 1;
                             System.out.println("transporte " + t + ":" + trans.get(i));
                         }
-                    }
-                     int transport=lea.nextInt();
+                        int transport=lea.nextInt();
                     transport--;
                     trans.get(transs).setConductores(transportista.get(transport).getNom());
+                    }
                 }break;
                 case 4:{
                     System.out.println("Escoger Transportista");
