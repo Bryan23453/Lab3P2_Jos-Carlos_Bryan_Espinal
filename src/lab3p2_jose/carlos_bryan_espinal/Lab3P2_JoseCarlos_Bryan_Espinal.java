@@ -140,7 +140,7 @@ static Scanner lea = new Scanner(System.in);
                             A=true;
                             System.out.println("ingrese identidad");
                             iden=lea.nextInt();
-                            for (personas per : alum) {
+                            for (personas per : transportista) {
                                 if (iden == per.getId()) {
                                     A=false;
                                     break;
@@ -257,15 +257,15 @@ static Scanner lea = new Scanner(System.in);
             System.out.print("Seleccione una opción: ");
             opcion = lea.nextInt();
             switch (opcion){
-                case 0:
-                    System.out.println("Gracias");
+                case 0:{
+                    System.out.println("Gracias");}
                     break;
-                case 1:
+                case 1:{
                     System.out.print("Ingrese el ID del alumno que desea subir al transporte: ");
                                 int id = lea.nextInt();
                                 int item2 = 0;
                                 
-                                  for (int z = 0; z < personas.size(); z++) {
+                                /*  for (int z = 0; z < personas.get(z).size(); z++) {
                                     int idAlumno2 = 0;
                                     if (personas.get(z) instanceof pasajeros) {
                                         idAlumno2 = ((pasajeros) personas.get(z)).getIdEstudiante();
@@ -283,8 +283,7 @@ static Scanner lea = new Scanner(System.in);
                                     if (personas.get(item2) instanceof pasajeros) {
                                         try {
 
-                                            transportes.get(posicion)
-                                                    .getAlumnos().add((pasajeros) personas.get(item2));
+                                            transportes.get(posicion).getAlumnos().add((pasajeros) personas.get(item2));
                                         } catch (Exception e) {
                                             System.out.println("La posicion del transporte es incorrecta.");
                                         }
@@ -292,28 +291,29 @@ static Scanner lea = new Scanner(System.in);
                                     }
                                 } else {
                                     System.out.println("No se encontro el ID del alumno");
-                                }
-                                break;
+                                }*/
+                }
                     break;
-                case 2:
+
+                case 2:{
                     
-                    break;
-                case 3:
+                }break;
+                case 3:{
                     System.out.println("Listar alumnos del transporte");
                     //for each del arraylist de alumnos
                     //dentro del for each:  alumnos.toString();
-                    break;
-                case 4:
+                }break;
+                case 4:{
                     System.out.println("Escoger Transportista");
-                    break;
-                case 5:
+                } break;
+                case 5:{
                     System.out.println("Quitar transportista");
                     
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
+                }break;
+                case 6:{
+                }break;
+                case 7:{
+                }break;
                 case 8:
                     //transportes.toString();
                     break;
@@ -326,7 +326,7 @@ static Scanner lea = new Scanner(System.in);
 
                 }
              
-            }
+            
                 break;
                 case 8:{
                     for (int i = 0; i < clas.size(); i++) {
