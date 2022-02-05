@@ -245,15 +245,20 @@ static Scanner lea = new Scanner(System.in);
                     System.out.println("Gracias");}
                     break;
                 case 1:{
-                     System.out.println("selecione el alumno a subir al autobus");
-                    for (int i = 0; i < alum.size(); i++) {
-                        int t = i + 1;
-                        System.out.println("alumno " + t + ":" + alum.get(i));
-                    }      
-                    int ops = lea.nextInt();
-                    ops--;
-                    pasajeros.add(alum.get(ops).getNom());
-                    trans.get(ops).setPasajeros(pasajeros);           
+                    if (alum.isEmpty()) {
+                        System.out.println(" No hay alumnos registradas ");
+                    }else{
+                        System.out.println("selecione el alumno a subir al autobus");
+                        for (int i = 0; i < alum.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("alumno " + t + ":" + alum.get(i));
+                        }
+                        int ops = lea.nextInt();
+                        ops--;
+                        pasajeros.add(alum.get(ops).getNom());
+                        trans.get(ops).setPasajeros(pasajeros);
+                    }  
+                               
                 }
                     break;
 
