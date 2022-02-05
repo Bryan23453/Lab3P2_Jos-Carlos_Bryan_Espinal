@@ -261,8 +261,39 @@ static Scanner lea = new Scanner(System.in);
                     System.out.println("Gracias");
                     break;
                 case 1:
-                    System.out.print("Ingrese el nombre del alumno: ");
-                    String nombre = lea.nextLine();
+                    System.out.print("Ingrese el ID del alumno que desea subir al transporte: ");
+                                int id = lea.nextInt();
+                                int item2 = 0;
+                                
+                                  for (int z = 0; z < personas.size(); z++) {
+                                    int idAlumno2 = 0;
+                                    if (personas.get(z) instanceof pasajeros) {
+                                        idAlumno2 = ((pasajeros) personas.get(z)).getIdEstudiante();
+                                    }
+                                    if (id == idAlumno2) {
+                                        item2 = z;
+                                        z = personas.size();
+                                    } else {
+                                        item2 = 100000;
+                                    }
+
+                                }
+
+                                if (item2 <= personas.size()) {
+                                    if (personas.get(item2) instanceof pasajeros) {
+                                        try {
+
+                                            transportes.get(posicion)
+                                                    .getAlumnos().add((pasajeros) personas.get(item2));
+                                        } catch (Exception e) {
+                                            System.out.println("La posicion del transporte es incorrecta.");
+                                        }
+
+                                    }
+                                } else {
+                                    System.out.println("No se encontro el ID del alumno");
+                                }
+                                break;
                     break;
                 case 2:
                     
@@ -277,13 +308,14 @@ static Scanner lea = new Scanner(System.in);
                     break;
                 case 5:
                     System.out.println("Quitar transportista");
+                    
                     break;
                 case 6:
                     break;
                 case 7:
                     break;
                 case 8:
-                    //transporte.toString();
+                    //transportes.toString();
                     break;
                 case 9:
                     System.out.println("Simulación");
@@ -293,6 +325,8 @@ static Scanner lea = new Scanner(System.in);
         }while(opcion!=0 || opcion!=9);
 
                 }
+             
+            }
                 break;
                 case 8:{
                     for (int i = 0; i < clas.size(); i++) {
