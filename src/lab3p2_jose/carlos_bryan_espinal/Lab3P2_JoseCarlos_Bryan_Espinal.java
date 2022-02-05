@@ -16,6 +16,7 @@ static Scanner lea = new Scanner(System.in);
         ArrayList<transportes> trans = new ArrayList();
         ArrayList<personas> alum = new ArrayList();
         ArrayList<personas> transportista = new ArrayList();
+        ArrayList<String> pasajeros = new ArrayList();
         while (a==true) {
             System.out.println("0. Salir\n" +
             "1. Crear Clase\n" +
@@ -228,110 +229,94 @@ static Scanner lea = new Scanner(System.in);
                 break;
                 case 7:{
                      System.out.println("Menú de Simulación");
-        System.out.println("1 - Bus\n2 - Rapidito\n3 - Taxi\n4 - Mototaxi");
-        System.out.print("Seleccione un transporte: ");
-        int transporteNum = lea.nextInt();
-        System.out.print("Ingrese la posición de ese transporte: ");
-        int posicion = lea.nextInt();
-        transportes transporte;
-        /* Aquí seleccionaríamos el transporte según su posición en el arraylist
-        switch(transporteNum){
-            case 1:
-                break;
-        }*/
-        
-        int opcion;
-        
+                     int opcion;
         do{
             System.out.println("0. Salir\n" +
             "1. Subir Alunmo al transporte\n" +
-            "2. Bajar alumno del transporte\n" +
-            "3. Listar alumnos del transporte\n" +
-            "4. Escoger transportista\n" +
-            "5. Quitar transportista\n" +
-            "6. Añadir ruta\n" +
-            "7. Quitar ruta\n" +
-            "8. Imprimir transporte\n" +
-            "9. Comenzar");
-            
+            "2. Listar alumnos del transporte\n" +
+            "3. Escoger transportista\n" +
+            "4. Añadir ruta\n" +
+            "5. Imprimir transporte\n" +
+            "6. Destruya EL transporte");
             System.out.print("Seleccione una opción: ");
-            opcion = lea.nextInt();
+             opcion = lea.nextInt();
             switch (opcion){
                 case 0:{
                     System.out.println("Gracias");}
                     break;
                 case 1:{
-                    System.out.print("Ingrese el ID del alumno que desea subir al transporte: ");
-                                int id = lea.nextInt();
-                                int item2 = 0;
-                                
-                                /*  for (int z = 0; z < personas.get(z).size(); z++) {
-                                    int idAlumno2 = 0;
-                                    if (personas.get(z) instanceof pasajeros) {
-                                        idAlumno2 = ((pasajeros) personas.get(z)).getIdEstudiante();
-                                    }
-                                    if (id == idAlumno2) {
-                                        item2 = z;
-                                        z = personas.size();
-                                    } else {
-                                        item2 = 100000;
-                                    }
-
-                                }
-
-                                if (item2 <= personas.size()) {
-                                    if (personas.get(item2) instanceof pasajeros) {
-                                        try {
-
-                                            transportes.get(posicion).getAlumnos().add((pasajeros) personas.get(item2));
-                                        } catch (Exception e) {
-                                            System.out.println("La posicion del transporte es incorrecta.");
-                                        }
-
-                                    }
-                                } else {
-                                    System.out.println("No se encontro el ID del alumno");
-                                }*/
+                     System.out.println("selecione el alumno a subir al autobus");
+                    for (int i = 0; i < alum.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("alumno " + t + ":" + alum.get(i));
+                    }      
+                    int ops = lea.nextInt();
+                    ops--;
+                    pasajeros.add(alum.get(ops).getNom());
+                    trans.get(ops).setPasajeros(pasajeros);           
                 }
                     break;
 
                 case 2:{
                     
+                    
                 }break;
                 case 3:{
-                    System.out.println("Listar alumnos del transporte");
-                    //for each del arraylist de alumnos
-                    //dentro del for each:  alumnos.toString();
+                    int transs=0;
+                    if (transportista.isEmpty()) {
+                        System.out.println(" No hay transportistas registrados ");
+                    }else{
+                        System.out.println("seleccione trasnportista a asignar");
+                        for (int i = 0; i < transportista.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("transportista " + t + ":" + transportista.get(i));
+                        }
+                    }
+                    
+                    
+                     if (trans.isEmpty()) {
+                        System.out.println(" No hay transportes registrados ");
+                    }else{
+                        System.out.println("ingrese transporte a asignar transportista");
+                        for (int i = 0; i < trans.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("transporte " + t + ":" + trans.get(i));
+                        }
+                    }
+                     int transport=lea.nextInt();
+                    transport--;
+                    trans.get(transs).setConductores(transportista.get(transport).getNom());
                 }break;
                 case 4:{
                     System.out.println("Escoger Transportista");
                 } break;
                 case 5:{
-                    System.out.println("Quitar transportista");
+                    for (int i = 0; i < trans.size(); i++) {
+                        int t = i + 1;
+                        System.out.println("transporte " + t + ":" + trans.get(i));
+                    }
                     
                 }break;
                 case 6:{
+                    
                 }break;
-                case 7:{
-                }break;
-                case 8:
-                    //transportes.toString();
-                    break;
-                case 9:
-                    System.out.println("Simulación");
-                    break;
+                
             }
             
-        }while(opcion!=0 || opcion!=9);
+        }while(opcion!=0 );
 
                 }
              
             
                 break;
                 case 8:{
-                    for (int i = 0; i < clas.size(); i++) {
-                        int t = i + 1;
-                        System.out.println("clase " + t + ":" + clas.get(i));
+                    if (clas.isEmpty()) {
+                        System.out.println(" No hay clases registradas ");
+                    }else{
+                        for (int i = 0; i < clas.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("clase " + t + ":" + clas.get(i));
+                        }
                     }
                 }
                 break;
@@ -340,23 +325,35 @@ static Scanner lea = new Scanner(System.in);
                 }
                 break;
                 case 10:{
-                    for (int i = 0; i < alum.size(); i++) {
-                        int t = i + 1;
-                        System.out.println("alumno " + t + ":" + alum.get(i));
+                    if (alum.isEmpty()) {
+                        System.out.println(" No hay alumnos registradas ");
+                    }else{
+                        for (int i = 0; i < alum.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("alumno " + t + ":" + alum.get(i));
+                        }
                     }
                 }
                 break;
                 case 11:{
-                    for (int i = 0; i < transportista.size(); i++) {
-                        int t = i + 1;
-                        System.out.println("transportista " + t + ":" + transportista.get(i));
+                    if (transportista.isEmpty()) {
+                        System.out.println(" No hay transportistas registrados ");
+                    }else{
+                        for (int i = 0; i < transportista.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("transportista " + t + ":" + transportista.get(i));
+                        }
                     }
                 }
                 break;
                 case 12:{
-                    for (int i = 0; i < trans.size(); i++) {
-                        int t = i + 1;
-                        System.out.println("transporte " + t + ":" + trans.get(i));
+                    if (trans.isEmpty()) {
+                        System.out.println(" No hay transportes registrados ");
+                    }else{
+                        for (int i = 0; i < trans.size(); i++) {
+                            int t = i + 1;
+                            System.out.println("transporte " + t + ":" + trans.get(i));
+                        }
                     }
                 }
                 break;

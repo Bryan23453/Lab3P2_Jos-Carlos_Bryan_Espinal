@@ -5,6 +5,8 @@
  */
 package lab3p2_jose.carlos_bryan_espinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bryan
@@ -12,6 +14,7 @@ package lab3p2_jose.carlos_bryan_espinal;
 public class mototaxis extends transportes{
     int tam;
     String a="mototaxi";
+        ArrayList<String> pasajeros = new ArrayList();
     public mototaxis(String placa, String color, String conductores,int tam) {
         super(placa, color, conductores);
         this.tam=tam;

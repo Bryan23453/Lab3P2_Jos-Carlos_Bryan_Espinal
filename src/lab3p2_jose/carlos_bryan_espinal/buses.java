@@ -5,6 +5,8 @@
  */
 package lab3p2_jose.carlos_bryan_espinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bryan
@@ -13,6 +15,7 @@ public class buses extends transportes{
     int depie;
     int cent;
     String a="bus";
+        ArrayList<String> pasajeros = new ArrayList();
     public buses(String placa, String color, String conductores,int par,int sen) {
         super(placa, color, conductores);
         this.depie=par;

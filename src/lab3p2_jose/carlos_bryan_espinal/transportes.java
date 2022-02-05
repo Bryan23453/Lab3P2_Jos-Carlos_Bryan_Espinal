@@ -5,15 +5,18 @@
  */
 package lab3p2_jose.carlos_bryan_espinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bryan
  */
+
 public class transportes {
      String placa;
      String color;
      String conductores;
-
+ ArrayList<String> pasajeros = new ArrayList();
     public transportes(String placa, String color, String conductores) {
         this.placa = placa;
         this.color = color;
@@ -43,6 +46,14 @@ public class transportes {
 
     public void setConductores(String conductores) {
         this.conductores = conductores;
+    }
+
+    public ArrayList<String> getPasajeros() {
+        return pasajeros;
+    }
+
+    public void setPasajeros(ArrayList<String> pasajeros) {
+        this.pasajeros = pasajeros;
     }
 
     @Override

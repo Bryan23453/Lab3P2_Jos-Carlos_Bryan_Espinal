@@ -5,6 +5,8 @@
  */
 package lab3p2_jose.carlos_bryan_espinal;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bryan
@@ -12,6 +14,7 @@ package lab3p2_jose.carlos_bryan_espinal;
 public class rapiditos extends transportes{
     int cap;
     String a="taxi";
+        ArrayList<String> pasajeros = new ArrayList();
     public rapiditos(String placa, String color, String conductores,int cap) {
         super(placa, color, conductores);
         this.cap=cap;
